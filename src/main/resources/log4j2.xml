@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Properties>
+		<Property name="LOG_PATTERN">
+			%d{yyyy-MM-dd HH:mm:ss,SSS} %5p [%-20c{1}] : %m%n
+		</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>		
+	</Appenders>
+
+	<Loggers>
+
+		<!-- Log for customns package -->
+		<Logger name="io.github.brenovit.store" level="WARN" additivity="false">
+			<AppenderRef ref="Console" />			
+		</Logger>	
+		
+		<Root level="INFO">
+			<AppenderRef ref="Console" />			
+		</Root>
+	</Loggers>
+
+</Configuration>
